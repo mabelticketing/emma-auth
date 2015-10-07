@@ -1,0 +1,5 @@
+# Authentication
+AADescription "Ticketing System"
+AuthType Ucam-WebAuth
+Require valid-user
+AAForceInteract On
