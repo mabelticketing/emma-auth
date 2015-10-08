@@ -20,7 +20,6 @@
  * @link      http://pear.php.net/package/PackageName
  */
 
-
 require_once 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
@@ -96,10 +95,8 @@ $data = array(
 );
 $json = json_encode($data);
 $token = JWT::encode($data, $MABEL_KEY, 'HS256');
-echo ($token);
 
-$decoded = JWT::decode($token, $MABEL_KEY, array('HS256'));
-echo "\n\n\n";
-print_r($decoded);
-
+$url = $_GET["redirect_to"] . "/". $token;
+header("Location: " . $url);
+die();
 ?>
